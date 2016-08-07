@@ -1,0 +1,42 @@
+<% if user_signed_in? %>
+
+  <%= current_user.email %><br><br>
+  <% if @message.present? %>
+  <center>
+    <div class="message">
+    <%= @message %>
+    <%= link_to root_path do%>
+    <div class="todashbtn"><span class="dashtext">Back to Dashboard</span></div>
+    <%end%>
+    </div>
+  </center>
+  <% else %>
+    <h2><%= @game.gtype %></h2><br>
+    <%= current_user.email %>
+    <%= @question_text %>
+    <%= form_tag "/result", :method => "post" do %>
+      <div>
+        <% @choices.each do |c| %>
+          <input type="radio" name="answer" value=<%= c[1] %> id="c<%= c[1] %>"><label for="c<%= c[1] %>"><%= c[0] %></label><br>
+        <% end %>
+        <input type="hidden" name="id1" value=<%= @game.id %>>
+        <input type="hidden" name="id2" value=<%= @question.id %>>
+      </div>
+      <input type="submit">
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to('Sign in!', new_user_session_path)  %>
+<% end %>
+
+<style>
+  input[type="radio"]{
+    visibility:hidden;
+  }
+  label {
+    cursor: pointer;
+  }
+  input:checked + label {
+    color: red;
+  }  
+</style>

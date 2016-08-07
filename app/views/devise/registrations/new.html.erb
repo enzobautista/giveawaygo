@@ -1,0 +1,50 @@
+<center style="margin-top:10vh;">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field" style="margin-top:15px;">
+    <%= f.email_field :email, autofocus: true, placeholder: "Email", :class=>"txtbox" %>
+  </div>
+
+  <div class="field" style="margin-top:15px;">
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Password", :class=>"txtbox" %>
+  </div>
+
+  <div class="field" style="margin-top:15px;">
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Repeat Password", :class=>"txtbox" %>
+
+  </div>
+
+  <div class="actions" style="margin-top:4vh;">
+    <%= f.submit "Sign Up", :class=>"devisebtn" %>
+  </div>
+<% end %>
+<br>
+<label class="deviselabel"> or</label> &nbsp
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Log In", new_session_path(resource_name), :class=>"deviselabel1",:style=>"margin-top:15px;" %>
+<% end -%>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+<% end -%>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+<% end -%>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+<% end -%>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+<% end -%>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+  <% end -%>
+<% end -%>
+
+</center>

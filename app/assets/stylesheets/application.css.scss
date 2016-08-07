@@ -1,0 +1,156 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ body{
+ 	background-color: #121212;
+ 	min-height: 100vh;
+ }
+
+h1{
+	font-family: 'Bungee', cursive;
+	color:#ffffff;
+	font-size: 100px;
+}
+h2{
+	font-family: 'Bungee', cursive;
+	color:#ffffff;
+	font-size: 70px;
+}
+#gapsec{
+	height:15vh;
+}
+#gsec{
+	min-height:10vh;
+	background-color: #212121;
+	padding: 1.5vh;
+}
+.txtbox{
+	background-color: #a7a9ab;
+	border: solid 0px transparent;
+	width:60vw;
+	min-height:10vw;
+	font-size: 50px;
+	font-weight: 300;
+	padding-left:5vw;
+	font-family: 'Roboto', sans-serif;
+}
+.deviselabel{
+	color:#909091;
+	font-size:32px;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+}
+.deviselabel1{
+	color:#00a79d;
+	font-size:32px;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+}
+.userlabel{
+	color:#ffffff;
+	font-size:40px;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+}
+.logoutlink{
+	color:#909091;
+	font-size:32px;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+}
+.devisebtn{
+	width:60vw;
+	min-height:10vw;
+	background-color:#e6e7e9;
+	border:none; 
+	font-size:50px;
+	font-weight: 400;
+	font-family: 'Roboto', sans-serif;
+}
+.todashbtn{
+	width:60vw;
+	min-height:10vw;
+	margin-top: 5vh;
+	background-color:#e6e7e9;
+	border:none;
+	padding: 1vh;
+	color: #212121; 
+	font-size:50px;
+	font-weight: 400;
+	font-family: 'Roboto', sans-serif;
+}
+
+.devise-shared-left{
+	float:left; margin-left:23vw;
+	margin-top: 15px;
+	color:#00a79d;
+	font-size:32px;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+}
+.devise-shared-right{
+	float:right; margin-right:23vw;
+	margin-top: 15px;
+	color:#909091;
+	font-size:32px;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+}
+input::-webkit-input-placeholder {
+color: #636363 !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: #636363 !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: #636363 !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: #636363 !important;  
+}
+#error_explanation{
+	color:#00a79d;
+	font-size:20px!important;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+	text-align: left;
+	margin-left: 20vw;
+}
+#error_explanation>h2{
+	color:#00a79d;
+	font-size:32px!important;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+	text-align: left;
+
+}
+#error_explanation>ul>li{
+	color:#00a79d;
+	font-size:24px!important;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+	text-align: left;
+
+}
+.message{
+	color:#ffffff;
+	font-size:50px!important;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+	margin-top: 10vh;
+}
