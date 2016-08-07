@@ -14,43 +14,66 @@
     <%= link_to 'Winners', secret_path %>
   <% end %>
 </center>
+<center style="margin-top:4vh;">
   <div>
     <% if @user_games.present? %>
       <% @user_games.each do |user_game| %>
-      <div>
-        Game: <%= user_game.game.gtype %><br>
-        Status: <% if user_game.status? %>WAGI!!!<% else %>Loser ka pa rin<% end %><br>
+      <div style="">
+        <span class="gametitle"><%= user_game.game.gtype %></span><br>
+        <div class="parentnum row">
         <% user_game.game.questions.order(:number).each do |q| %>
           <% user_game_question = UserGameQuestion.where(user_game_id: user_game.id).where(question_id: q.id).first %>
           <% if user_game_question.present? %>
             <% if user_game_question.status? %>
-              <span style="color: blue;">
+              
+              <div class="col-xs-3">
+              <div class="num numcorrect">
+              <%= q.number %>
+              </div>
+              </div>
             <% else %>
-              <span style="color: red;">
+            
+              <div class="col-xs-3">
+              <div class="num numwrong">
+              <%= q.number %>
+              </div>
+              </div>
             <% end %>
           <% else %>
-            <span style="color: white;">
+            
+            <div class="col-xs-3">
+            <div class="num numreg">
+            <%= q.number %>
+            </div>
+            </div>
           <% end %>
-          <%= q.number %></span>
         <% end %>
+        </div>
         </div>
         <br>
       <% end %>
     <% end %>
     <% if @not_user_games.present? %>
       <% @not_user_games.each do |game| %>
-        <div>
-          Game: <%= game.gtype %><br>
-          Status: Bes magsimula ka na<br>
+        <div style="">
+          <span class="gametitle"><%= game.gtype %></span><br>
+          <div class="parentnum row">
           <% game.questions.order(:number).each do |q| %>
-            <span style="color: white;"><%= q.number %></span>
+            
+            <div class="col-xs-3">
+            <div class="num numreg ">
+            <%= q.number %>
+            </div>
+            </div>
+            
           <% end %>
+          </div>
         </div>
         <br>
       <% end %>
     <% end %>
   </div>
-
+</center>
 <% else %>
   <%= link_to('Sign in!', new_user_session_path)  %>
 <% end %>
