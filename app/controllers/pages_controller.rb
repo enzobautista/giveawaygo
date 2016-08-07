@@ -23,7 +23,7 @@ class PagesController < ApplicationController
           UserGame.create(game_id: @game.id, user_id: current_user.id)
         end
         user_game = UserGame.where(game_id: @game.id).where(user_id: current_user.id).first
-        if user_game.status?
+        # if user_game.status?
           question_code = params[:qr_code].at(-3..-1).to_i
           @question = Question.where(code: question_code).where(game_id: @game.id).first
 
@@ -43,7 +43,7 @@ class PagesController < ApplicationController
                 else
                 end
               end
-              if (@game.id == 1) #Jackie Go
+              if (@game.id == 2) #Jackie Go
                 if (@question.number == 1)
                   @question_text = "Do u feel any pressure right now?"
                   @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
@@ -62,9 +62,9 @@ class PagesController < ApplicationController
           else
             @message = "Keep on looking!"
           end
-        else
-          @message = "You found a question! But too bad, you already lost this game (#{@game.gtype}) mah friend!"
-        end
+        #else
+        #  @message = "You found a question! But too bad, you already lost this game (#{@game.gtype}) mah friend!"
+        #end
       else
         @message = "Keep on looking!"
       end
@@ -77,11 +77,21 @@ class PagesController < ApplicationController
     if user_game.present? && question.present?
       if question.answer == params[:answer].to_i
         UserGameQuestion.create(user_game_id: user_game.id, question_id: question.id, status: true)
+        if (user_game.game.quantity == (UserGameQuestion.where(user_game_id: user_game.id).where(status: true).count))
+          user_game.update(status: true)
+        end
       else
         UserGameQuestion.create(user_game_id: user_game.id, question_id: question.id, status: false)
-        user_game.update(status: false)
       end
     end
     redirect_to root_path
+  end
+
+  def secret
+    if user_signed_in? && (current_user.email == "admin@i16.co")
+      @games = Game.all
+    else
+      redirect_to root_path
+    end
   end
 end

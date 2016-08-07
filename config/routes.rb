@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
-  get '/:qr_code' => 'pages#question', as: :question_path
+  get '/top_secret' => 'pages#secret', as: :secret
+  get '/:qr_code' => 'pages#question', as: :question
   post '/result' => 'pages#result'
 
   devise_for :users

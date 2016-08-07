@@ -10,21 +10,29 @@
     <%= current_user.email %> |
   </span>  
     <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class=>"logoutlink") %>
+  <% if current_user.email == "admin@i16.co" %>
+    <%= link_to 'Winners', secret_path %>
+  <% end %>
 </center>
   <div>
     <% if @user_games.present? %>
       <% @user_games.each do |user_game| %>
-        <div>
-          Game: <%= user_game.game.gtype %><br>
-          Status: 
-          <% if user_game.status? %>
-            Ongoing
+      <div>
+        Game: <%= user_game.game.gtype %><br>
+        Status: <% if user_game.status? %>WAGI!!!<% else %>Loser ka pa rin<% end %><br>
+        <% user_game.game.questions.order(:number).each do |q| %>
+          <% user_game_question = UserGameQuestion.where(user_game_id: user_game.id).where(question_id: q.id).first %>
+          <% if user_game_question.present? %>
+            <% if user_game_question.status? %>
+              <span style="color: blue;">
+            <% else %>
+              <span style="color: red;">
+            <% end %>
           <% else %>
-            Lost
+            <span style="color: white;">
           <% end %>
-          <br>
-          <% count = UserGameQuestion.where(user_game_id: user_game.id, status: true).count %>
-          Questions Answered: <%= count %>/<%= user_game.game.quantity %> 
+          <%= q.number %></span>
+        <% end %>
         </div>
         <br>
       <% end %>
@@ -33,8 +41,10 @@
       <% @not_user_games.each do |game| %>
         <div>
           Game: <%= game.gtype %><br>
-          Status: Not yet started<br>
-          Questions Answered: <%= 0 %>/<%= game.quantity %>
+          Status: Bes magsimula ka na<br>
+          <% game.questions.order(:number).each do |q| %>
+            <span style="color: white;"><%= q.number %></span>
+          <% end %>
         </div>
         <br>
       <% end %>

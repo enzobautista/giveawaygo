@@ -47,7 +47,7 @@ user
 - pw
 
 user_game
-- status #default is true. tas false pag talo na
+- status #default is false. magiging true pag panalo na siya
 - user_id
 - game_id
 

@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 20160806172130) do
   end
 
   create_table "user_games", force: :cascade do |t|
-    t.boolean  "status",     default: true
+    t.boolean  "status",     default: false
     t.integer  "user_id"
     t.integer  "game_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|
