@@ -1,6 +1,4 @@
 <% if user_signed_in? %>
-
-  <%= current_user.email %><br><br>
   <% if @message.present? %>
   <center>
     <div class="message">
@@ -11,23 +9,36 @@
     </div>
   </center>
   <% else %>
-    <h2><%= @game.gtype %></h2><br>
-    <%= current_user.email %>
-    <%= @question_text %>
+    <center>
+        <h2><%= @game.gtype %></h2>
+
+      <span class="userlabel">
+        <%= current_user.email %> |
+      </span>  
+      <%= link_to "Dashboard", root_path, :class=>"logoutlink"%>&nbsp
+        <span class="userlabel">|</span>&nbsp&nbsp        <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class=>"logoutlink") %>
+    </center>
+<section style="margin-top:5vh; padding-left:10vw; padding-right:10vw;">
+    <span class="questiontext"><%= @question_text %></span>
+</section>
+<center style="margin-top:2vh;">
     <%= form_tag "/result", :method => "post" do %>
       <div>
         <% @choices.each do |c| %>
-          <input type="radio" name="answer" value=<%= c[1] %> id="c<%= c[1] %>"><label for="c<%= c[1] %>"><%= c[0] %></label><br>
+          <input type="radio" name="answer" value=<%= c[1] %> id="c<%= c[1] %>"><label for="c<%= c[1] %>"><%= c[0] %></label><br><br>
         <% end %>
         <input type="hidden" name="id1" value=<%= @game.id %>>
         <input type="hidden" name="id2" value=<%= @question.id %>>
       </div>
-      <input type="submit">
+      <input class="answerbtn" type="submit">
     <% end %>
   <% end %>
 <% else %>
   <%= link_to('Sign in!', new_user_session_path)  %>
 <% end %>
+</center>
+
+
 
 <style>
   input[type="radio"]{
@@ -35,8 +46,16 @@
   }
   label {
     cursor: pointer;
+    width:60vw;
+    min-height:10vw;
+    background-color: #a7a9ab;
+    font-size:50px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 1.8vw;
   }
   input:checked + label {
-    color: red;
+    color: #ffffff;
+    background-color:#00a79d;
   }  
 </style>

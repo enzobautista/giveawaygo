@@ -28,8 +28,12 @@ h2{
 	color:#ffffff;
 	font-size: 70px;
 }
+.logo{
+ 	height:13vh;
+ 	margin-top: 1.7vh;
+ }
 #gapsec{
-	height:15vh;
+	height:16vh;
 }
 #gsec{
 	min-height:10vh;
@@ -64,6 +68,11 @@ h2{
 	font-weight: 300;
 	font-family: 'Roboto', sans-serif;
 }
+.questiontext{
+	color:#ffffff;
+	font-size:50px;
+	font-family: 'Bungee', sans-serif;
+}
 .logoutlink{
 	color:#909091;
 	font-size:32px;
@@ -75,6 +84,17 @@ h2{
 	min-height:10vw;
 	background-color:#e6e7e9;
 	border:none; 
+	font-size:50px;
+	font-weight: 400;
+	font-family: 'Roboto', sans-serif;
+}
+.answerbtn{
+	width:60vw;
+	min-height:10vw;
+	background-color:#00a79d;
+	border:none; 
+	color: #ffffff;
+	margin-left: 13px;
 	font-size:50px;
 	font-weight: 400;
 	font-family: 'Roboto', sans-serif;
