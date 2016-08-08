@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'pages#index'
   get '/top_secret' => 'pages#secret', as: :secret
+  get '/top_secret2' => 'pages#secret2', as: :secret2
+  get '/evals/:qr_code' => 'pages#evals', as: :evals
+  post '/answer' => 'pages#answer'
+  get '/submit' => 'pages#submit', as: :submit
   get '/:qr_code' => 'pages#question', as: :question
   post '/result' => 'pages#result'
 

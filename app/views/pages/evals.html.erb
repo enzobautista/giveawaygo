@@ -1,0 +1,85 @@
+<% if user_signed_in? %>
+  <% if @message.present? %>
+    <center>
+      <div class="message">
+      <%= @message %>
+      <%= link_to root_path do%>
+      <div class="todashbtn"><span class="dashtext">Back to Dashboard</span></div>
+      <%end%>
+      </div>
+    </center>
+  <% else %>
+    
+    <%= form_tag "/answer", :method => "post" do %>
+      <input type="hidden" name="id" value=<%= @eval.id %>>
+      <center>
+        <div>
+          Do u feel any pressure right now?
+          <div>
+            <% (1..5).each do |i| %>
+              <% if i==1 %>
+                <input type="radio" name="a" value=<%= i %> id="q<%= i %>" checked>
+              <% else %>
+                <input type="radio" name="a" value=<%= i %> id="q<%= i %>">
+              <% end %><label for="q<%= 1 %>"><%= i %></label>&nbsp;&nbsp;&nbsp;
+            <% end %>
+          </div>
+        </div>
+        <div>
+          Do u feel any pressure right now?
+          <div>
+            <% (1..5).each do |i| %>
+              <% if i==1 %>
+                <input type="radio" name="b" value=<%= i %> id="q<%= i %>" checked>
+              <% else %>
+                <input type="radio" name="b" value=<%= i %> id="q<%= i %>">
+              <% end %><label for="q<%= 1 %>"><%= i %></label>&nbsp;&nbsp;&nbsp;
+            <% end %>
+          </div>
+        </div>
+        <div>
+          Do u feel any pressure right now?
+          <div>
+            <% (1..5).each do |i| %>
+              <% if i==1 %>
+                <input type="radio" name="c" value=<%= i %> id="q<%= i %>" checked>
+              <% else %>
+                <input type="radio" name="c" value=<%= i %> id="q<%= i %>">
+              <% end %><label for="q<%= 1 %>"><%= i %></label>&nbsp;&nbsp;&nbsp;
+            <% end %>
+          </div>
+        </div>
+        <div>
+          Do u feel any pressure right now?
+          <div>
+            <% (1..5).each do |i| %>
+              <% if i==1 %>
+                <input type="radio" name="d" value=<%= i %> id="q<%= i %>" checked>
+              <% else %>
+                <input type="radio" name="d" value=<%= i %> id="q<%= i %>">
+              <% end %><label for="q<%= 1 %>"><%= i %></label>&nbsp;&nbsp;&nbsp;
+            <% end %>
+          </div>
+        </div>
+        <div>
+          Do u feel any pressure right now?
+          <div>
+            <% (1..5).each do |i| %>
+              <% if i==1 %>
+                <input type="radio" name="e" value=<%= i %> id="q<%= i %>" checked>
+              <% else %>
+                <input type="radio" name="e" value=<%= i %> id="q<%= i %>">
+              <% end %><label for="q<%= 1 %>"><%= i %></label>&nbsp;&nbsp;&nbsp;
+            <% end %>
+          </div>
+        </div>
+        <input class="answerbtn" type="submit">
+      </center>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to('Sign in!', new_user_session_path)  %>
+<% end %>
+
+
+

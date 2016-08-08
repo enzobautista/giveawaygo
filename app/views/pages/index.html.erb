@@ -12,6 +12,7 @@
     <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class=>"logoutlink") %>
   <% if current_user.email == "admin@i16.co" %>
     <%= link_to 'Winners', secret_path %>
+    <%= link_to 'Evals', secret2_path %>
   <% end %>
 </center>
 <center style="margin-top:4vh;">
