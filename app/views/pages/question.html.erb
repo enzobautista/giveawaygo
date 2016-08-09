@@ -19,7 +19,7 @@
         <span class="userlabel">|</span>&nbsp&nbsp        <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class=>"logoutlink") %>
     </center>
 <section style="margin-top:5vh; padding-left:10vw; padding-right:10vw;">
-    <span class="questiontext"><%= @question_text %></span>
+    <center><span class="questiontext"><%= @question_text %></span></center>
 </section>
 <center style="margin-top:2vh;">
     <%= form_tag "/result", :method => "post" do %>
