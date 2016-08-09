@@ -7,13 +7,13 @@
 <% if user_signed_in? %>
 <center>
   <span class="userlabel">
-    <%= current_user.email %> |
-  </span>  
+    <%= current_user.email %> | 
     <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class=>"logoutlink") %>
   <% if current_user.email == "admin@i16.co" %>
-    <%= link_to 'Winners', secret_path %>
-    <%= link_to 'Evals', secret2_path %>
+    <br><%= link_to 'Winners', secret_path %>
+    | <%= link_to 'Eval Responses', secret2_path %>
   <% end %>
+  </span> 
 </center>
 <center style="margin-top:4vh;">
   <div>
@@ -78,3 +78,13 @@
 <% else %>
   <%= link_to('Sign in!', new_user_session_path)  %>
 <% end %>
+
+<style>
+a {
+  color: #00a79d;
+  font-size: 30px;
+}
+a:hover {
+  color: white;
+}
+</style>
