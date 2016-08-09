@@ -20,48 +20,124 @@ class PagesController < ApplicationController
         UserGame.create(game_id: @game.id, user_id: current_user.id)
       end
       user_game = UserGame.where(game_id: @game.id).where(user_id: current_user.id).first
-      # if user_game.status?
-        question_code = params[:qr_code].at(-3..-1).to_i
-        @question = Question.where(code: question_code).where(game_id: @game.id).first
+      question_code = params[:qr_code].at(-3..-1).to_i
+      @question = Question.where(code: question_code).where(game_id: @game.id).first
 
-        if @question.present?
-          user_game_question = UserGameQuestion.where(user_game_id: user_game.id).where(question_id: @question.id).first
-          if !user_game_question.present?
-            if (@game.id == 1) #Enzo Go, pwede rin if game.type == "Enzo Go" kaso mas efficient if u compare integers
-              if (@question.number == 1)
-                @question_text = "Acc to bongbong marcos, magkano ang pamasahe ngayon sa jeep?"
-                @choices = [["6 pesos",1],["4 pesos",2],["10 pesos",3]]
-              elsif (@question.number == 2)
-                @question_text = "What is El Nino?"
-                @choices = [["Drought. We need to start planting trees and we will achieve la nina",1],["Sto Nino ba yan pit senyor!",2],["Alam ko lang nino si nino muhlach",3]]
-              elsif (@question.number == 3)
-                @question_text = "Who dat who dat?"
-                @choices = [["La pong tao rito",1],["This is real this is me",2],["I-G-G-Y!",3]]
-              else
-              end
+      if @question.present?
+        user_game_question = UserGameQuestion.where(user_game_id: user_game.id).where(question_id: @question.id).first
+        if !user_game_question.present?
+          if (@game.id == 1) #Website Go, pwede rin if game.type == "Enzo Go" kaso mas efficient if u compare integers
+            if (@question.number == 1)
+              @question_text = "Acc to bongbong marcos, magkano ang pamasahe ngayon sa jeep?"
+              @choices = [["6 pesos",1],["4 pesos",2],["10 pesos",3]]
+            elsif (@question.number == 2)
+              @question_text = "What is El Nino?"
+              @choices = [["Drought. We need to start planting trees and we will achieve la nina",1],["Sto Nino ba yan pit senyor!",2],["Alam ko lang nino si nino muhlach",3]]
+            elsif (@question.number == 3)
+              @question_text = "Who dat who dat?"
+              @choices = [["La pong tao rito",1],["This is real this is me",2],["I-G-G-Y!",3]]
+            elsif (@question.number == 4)
+              @question_text = "Acc to bongbong marcos, magkano ang pamasahe ngayon sa jeep?"
+              @choices = [["6 pesos",1],["4 pesos",2],["10 pesos",3]]
+            elsif (@question.number == 5)
+              @question_text = "Acc to bongbong marcos, magkano ang pamasahe ngayon sa jeep?"
+              @choices = [["6 pesos",1],["4 pesos",2],["10 pesos",3]]
+            else
             end
-            if (@game.id == 2) #Jackie Go
-              if (@question.number == 1)
-                @question_text = "Do u feel any pressure right now?"
-                @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
-              elsif (@question.number == 2)
-                @question_text = "Do u support the RH Law?"
-                @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
-              elsif (@question.number == 3)
-                @question_text = "What are ur reservations about the RH Law?"
-                @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
-              else
-              end
+          end
+          if (@game.id == 2) #Sponsors Go
+            if (@question.number == 1)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            elsif (@question.number == 2)
+              @question_text = "Do u support the RH Law?"
+              @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
+            elsif (@question.number == 3)
+              @question_text = "What are ur reservations about the RH Law?"
+              @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+            elsif (@question.number == 4)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            elsif (@question.number == 5)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            else
             end
-          else
-            @message = "You already answered this question!"
+          end
+          if (@game.id == 3) #Summit Go
+            if (@question.number == 1)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            elsif (@question.number == 2)
+              @question_text = "Do u support the RH Law?"
+              @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
+            elsif (@question.number == 3)
+              @question_text = "What are ur reservations about the RH Law?"
+              @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+            elsif (@question.number == 4)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            else
+            end
+          end
+          if (@game.id == 4) #Sponsors Go
+            if (@question.number == 1)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            elsif (@question.number == 2)
+              @question_text = "Do u support the RH Law?"
+              @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
+            elsif (@question.number == 3)
+              @question_text = "What are ur reservations about the RH Law?"
+              @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+            elsif (@question.number == 4)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            elsif (@question.number == 5)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            elsif (@question.number == 6)
+              @question_text = "Do u support the RH Law?"
+              @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
+            elsif (@question.number == 7)
+              @question_text = "What are ur reservations about the RH Law?"
+              @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+            elsif (@question.number == 8)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            elsif (@question.number == 9)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            elsif (@question.number == 10)
+              @question_text = "Do u support the RH Law?"
+              @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
+            elsif (@question.number == 11)
+              @question_text = "What are ur reservations about the RH Law?"
+              @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+            elsif (@question.number == 12)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            elsif (@question.number == 13)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            elsif (@question.number == 14)
+              @question_text = "Do u support the RH Law?"
+              @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
+            elsif (@question.number == 15)
+              @question_text = "What are ur reservations about the RH Law?"
+              @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+            elsif (@question.number == 16)
+              @question_text = "Do u feel any pressure right now?"
+              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+            else
+            end
           end
         else
-          @message = "Keep on looking!"
+          @message = "You already answered this question!"
         end
-      #else
-      #  @message = "You found a question! But too bad, you already lost this game (#{@game.gtype}) mah friend!"
-      #end
+      else
+        @message = "Keep on looking!"
+      end
     else
       @message = "Keep on looking!"
     end
