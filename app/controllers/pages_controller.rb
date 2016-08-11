@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+    before_action :authenticate_user!
   def index
     @user_games = UserGame.where(user_id: current_user.id) #games played
     user_game_game_ids = []
