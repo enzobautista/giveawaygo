@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160808121624) do
     t.integer  "answer_e"
     t.integer  "user_id"
     t.integer  "eval_id"
+    t.integer  "timeslot"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

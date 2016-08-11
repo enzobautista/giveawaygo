@@ -9,10 +9,21 @@
       </div>
     </center>
   <% else %>
-    
     <%= form_tag "/answer", :method => "post" do %>
       <input type="hidden" name="id" value=<%= @eval.id %>>
       <center>
+        <div style="margin-top:5vh;">
+          <span class="message">Timeslot session</span>
+          <div style="margin-top: 3vh;">
+            <select name="t" style="font-size: 40px; background-color: #00a79d; border:none; color:white; height: 70px; width: 50vw; padding-left: 17vw;" required>
+              <option value=1>9:30 AM</option>
+              <option value=2>10:45 AM</option>
+              <option value=3>1:00 PM</option>
+              <option value=4>2:15 PM</option>
+              <option value=5>3:30 PM</option>
+            </select>
+          </div>
+        </div>
         <div style="margin-top:5vh;">
           <span class="message">Do u feel any pressure right now?</span>
           <div style="margin-top: 3vh;">

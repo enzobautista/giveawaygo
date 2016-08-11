@@ -8,6 +8,7 @@ class CreateUserEvals < ActiveRecord::Migration
       t.integer :answer_e
       t.integer :user_id
       t.integer :eval_id
+      t.integer :timeslot
 
       t.timestamps null: false
     end
