@@ -6,12 +6,12 @@
     <%= f.email_field :email, autofocus: true, placeholder: "Email", :class=>"txtbox" %>
   </div>
 
-  <div class="field" style="margin-top:15px;">
-    <%= f.password_field :password, autocomplete: "off", placeholder: "Password", :class=>"txtbox" %>
+  <div class="field hiddenfield" style="margin-top:15px;">
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Password", :class=>"txtbox",:value=>"123456" %>
   </div>
 
-  <div class="field" style="margin-top:15px;">
-    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Repeat Password", :class=>"txtbox" %>
+  <div class="field hiddenfield" style="margin-top:15px;">
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Repeat Password", :class=>"txtbox", :value=>"123456" %>
 
   </div>
 

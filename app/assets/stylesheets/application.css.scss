@@ -45,6 +45,9 @@ h2{
  	bottom:-1000;
  	width:100vw;
  }**/
+ .hiddenfield{
+ 	display:none;
+ }
 #gsec{
 	min-height:10vh;
 	background-color: #212121;
@@ -123,8 +126,9 @@ h2{
 }
 
 .devise-shared-left{
-	float:left; margin-left:23vw;
-	margin-top: 15px;
+	/**float:left; margin-left:23vw;**/
+	text-align: center;
+	margin-top: 25px;
 	color:#00a79d;
 	font-size:32px;
 	font-weight: 300;
