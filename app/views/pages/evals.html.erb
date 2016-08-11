@@ -9,7 +9,7 @@
       </div>
     </center>
   <% else %>
-  
+
     <%= form_tag "/answer", :method => "post" do %>
       <input type="hidden" name="id" value=<%= @eval.id %>>
       <center>
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div style="margin-top:5vh;">
-          <span class="message">Do u feel any pressure right now?</span>
+          <span class="message">The session material was relevant and informative.</span>
           <div style="margin-top: 3vh;">
             <% (1..5).each do |i| %>
               <% if i==1 %>
@@ -38,7 +38,7 @@
           </div>
         </div>
         <div style="margin-top:5vh;">
-          <span class="message">Do u feel any pressure right now?</span>
+          <span class="message">The speaker was engaging</span>
           <div style="margin-top: 3vh;">
             <% (1..5).each do |i| %>
               <% if i==1 %>
@@ -50,7 +50,7 @@
           </div>
         </div>
        <div style="margin-top:5vh;">
-          <span class="message">Do u feel any pressure right now?</span>
+          <span class="message">The length of time alloted for the session was appropriate</span>
           <div style="margin-top: 3vh;">
             <% (1..5).each do |i| %>
               <% if i==1 %>
@@ -62,7 +62,7 @@
           </div>
         </div>
         <div style="margin-top:5vh;">
-          <span class="message">Do u feel any pressure right now?</span>
+          <span class="message">I would recommend the session to my colleagues</span>
           <div style="margin-top:3vh;">
             <% (1..5).each do |i| %>
               <% if i==1 %>
@@ -74,7 +74,7 @@
           </div>
         </div>
         <div style="margin-top:5vh;">
-          <span class="message">Do u feel any pressure right now?</span>
+          <span class="message">The venue setup was conducive for the session</span>
           <div style="margin-top:3vh;">
             <% (1..5).each do |i| %>
               <% if i==1 %>
