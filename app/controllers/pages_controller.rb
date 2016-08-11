@@ -68,7 +68,7 @@ class PagesController < ApplicationController
           if (@game.id == 3) #Summit Go
             if (@question.number == 1)
               @question_text = "Who will be giving the Welcome Remarks for the Summit?"
-              @choices = [["Fernando Zobel de Ayala",1],["Jaime Zobel de Ayala",2],["Jaime Augusto Zobel de Ayala",3]
+              @choices = [["Fernando Zobel de Ayala",1],["Jaime Zobel de Ayala",2],["Jaime Augusto Zobel de Ayala",3]]
             elsif (@question.number == 2)
               @question_text = "Atty. Rodolfo Salalima is the Secretary of which newly formed Department?"
               @choices = [["Department of Information Technology",1],["Department of Information and Communications Technology",2],["Department of Transportation and Communications",3]]
@@ -83,14 +83,14 @@ class PagesController < ApplicationController
           end
           if (@game.id == 4) #Sponsors Go
             if (@question.number == 1)
-              @question_text = "Do u feel any pressure right now?"
-              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+              @question_text = "<center><img src='/assets/cio/cio-annie.jpg' style='width:40vw;'></center>"
+              @choices = [["",1],["",2],["",3]]
             elsif (@question.number == 2)
-              @question_text = "Do u support the RH Law?"
-              @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
+              @question_text = ""
+              @choices = [["",1],["",2],["",3]]
             elsif (@question.number == 3)
-              @question_text = "What are ur reservations about the RH Law?"
-              @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+              @question_text = ""
+              @choices = [["",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
             elsif (@question.number == 4)
               @question_text = "Do u feel any pressure right now?"
               @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
