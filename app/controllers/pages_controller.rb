@@ -83,53 +83,53 @@ class PagesController < ApplicationController
           end
           if (@game.id == 4) #Sponsors Go
             if (@question.number == 1)
-              @question_text = "<center><img src='/assets/cio/cio-annie.jpg' style='width:40vw;'></center>"
-              @choices = [["",1],["",2],["",3]]
+              @question_text = "<center><img src='/assets/cio/cio-suzette.jpg' style='width:40vw;'></center>"
+              @choices = [["Suzette B. Taala",1],["Rosalyn O. Teosoro",2],["Pebbles L. Sy-Manalang",3]]
             elsif (@question.number == 2)
-              @question_text = ""
-              @choices = [["",1],["",2],["",3]]
+              @question_text = "<center><img src='/assets/cio/cio-garcia.jpg' style='width:40vw;'></center>"
+              @choices = [["Gabriel V. Tuason",1],["Rodell A. Garcia",2],["Erwin P. Locsin",3]]
             elsif (@question.number == 3)
-              @question_text = ""
-              @choices = [["",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+              @question_text = "<center><img src='/assets/cio/cio-gigi.jpg' style='width:40vw;'></center>"
+              @choices = [["Annie T. Alipao",1],["Olive S. Garcia",2],["Maria Angelica B. Rapadas",3]]
             elsif (@question.number == 4)
-              @question_text = "Do u feel any pressure right now?"
-              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+              @question_text = "<center><img src='/assets/cio/cio-rod.jpg' style='width:40vw;'></center>"
+              @choices = [["Gerard R. Estrada",1],["Roderick I. Villahermosa",2],["Marino Adriano P. Encarnacion",3]]
             elsif (@question.number == 5)
-              @question_text = "Do u feel any pressure right now?"
-              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+              @question_text = "<center><img src='/assets/cio/cio-olive.jpg' style='width:40vw;'></center>"
+              @choices = [["Pilar Bernadette C. Marquez",1],["Olive S. Garcia",2],["Pebbles L. Sy-Manalang",3]]
             elsif (@question.number == 6)
-              @question_text = "Do u support the RH Law?"
-              @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
+              @question_text = "<center><img src='/assets/cio/cio-erwin1.jpg' style='width:40vw;'></center>"
+              @choices = [["Erwin P. Locsin",1],["Marino Adriano P. Encarnacion",2],["Gabriel V. Tuason",3]]
             elsif (@question.number == 7)
-              @question_text = "What are ur reservations about the RH Law?"
-              @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+              @question_text = "<center><img src='/assets/cio/cio-vivien1.jpg' style='width:40vw;'></center>"
+              @choices = [["Vivien V. Villa-Real",1],["Annie T. Alipao",2],["Rosalyn O. Teosoro",3]]
             elsif (@question.number == 8)
-              @question_text = "Do u feel any pressure right now?"
-              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+              @question_text = "<center><img src='/assets/cio/cio-besler.jpg' style='width:40vw;'></center>"
+              @choices = [["Macjune D. Tolentino",1],["Christian Besler",2],["Gabriel V. Tuason",3]]
             elsif (@question.number == 9)
-              @question_text = "Do u feel any pressure right now?"
-              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+              @question_text = "<center><img src='/assets/cio/cio-pebble.jpg' style='width:40vw;'></center>"
+              @choices = [["Pebbles L. Sy-Manalang",1],["Pilar Bernadette C. Marquez",2],["Annie T. Alipao",3]]
             elsif (@question.number == 10)
-              @question_text = "Do u support the RH Law?"
-              @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
+              @question_text = "<center><img src='/assets/cio/cio-gerard.jpg' style='width:40vw;'></center>"
+              @choices = [["Marino Adriano P. Encarnacion",1],["Gabriel V. Tuason",2],["Gerard R. Estrada",3]]
             elsif (@question.number == 11)
-              @question_text = "What are ur reservations about the RH Law?"
-              @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+              @question_text = "<center><img src='/assets/cio/cio-annie.jpg' style='width:40vw;'></center>"
+              @choices = [["Annie T. Alipao",1],["Rosalyn O. Teosoro",2],["Suzette B. Taala",3]]
             elsif (@question.number == 12)
-              @question_text = "Do u feel any pressure right now?"
-              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+              @question_text = "<center><img src='/assets/cio/cio-macjune.jpg' style='width:40vw;'></center>"
+              @choices = [["Macjune D. Tolentino",1],["Rodell A. Garcia",2],["Gabriel V. Tuason",3]]
             elsif (@question.number == 13)
-              @question_text = "Do u feel any pressure right now?"
-              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+              @question_text = "<center><img src='/assets/cio/cio-pilar.jpg' style='width:40vw;'></center>"
+              @choices = [["Pebbles L. Sy-Manalang",1],["Pilar Bernadette C. Marquez",2],["Maria Angelica B. Rapadas",3]]
             elsif (@question.number == 14)
-              @question_text = "Do u support the RH Law?"
-              @choices = [["Yes, with reservations",1],["Yes",2],["No",3]]
+              @question_text = "<center><img src='/assets/cio/cio-gabo1.jpg' style='width:40vw;'></center>"
+              @choices = [["Roderick I. Villahermosa",1],["Gabriel V. Tuason",2],["Erwin P. Locsin",3]]
             elsif (@question.number == 15)
-              @question_text = "What are ur reservations about the RH Law?"
-              @choices = [["Ano ba ang reservations",1],["Kailangan pa ba sagutin yan?",2],["Pills!",3]]
+              @question_text = "<center><img src='/assets/cio/cio-rosalyn.jpg' style='width:40vw;'></center>"
+              @choices = [["Vivien V. Villa-Real",1],["Suzette B. Taala",2],["Rosalyn O. Teosoro",3]]
             elsif (@question.number == 16)
-              @question_text = "Do u feel any pressure right now?"
-              @choices = [["Syempre wala! Confident!",1],["Dasal lang",2],["No i dont feel any pressure right now",3]]
+              @question_text = "<center><img src='/assets/cio/cio-mar.jpg' style='width:40vw;'></center>"
+              @choices = [["Christian Besler",1],["Marino Adriano P. Encarnacion",2],["Macjune D. Tolentino",3]]
             else
             end
           end
