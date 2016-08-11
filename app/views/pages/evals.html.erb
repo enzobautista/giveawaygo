@@ -9,6 +9,7 @@
       </div>
     </center>
   <% else %>
+  
     <%= form_tag "/answer", :method => "post" do %>
       <input type="hidden" name="id" value=<%= @eval.id %>>
       <center>
